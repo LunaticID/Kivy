@@ -1,0 +1,85 @@
+<Signup>:
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {'center_x': 0.05,'center_y': 0.95}
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "welcome"
+    Image:
+        source: "aset/gambar/login.png"
+        halign: "center"
+        pos_hint: {'center_y': 0.70}
+        allow_stretch:
+    MDLabel:
+        text: "Masuk untuk melanjutkan"
+        font_size: "20sp"
+        font_name: "BPoppins"
+        halign: "center"
+        color: rgba(127, 127, 127, 255)
+        pos_hint: {'center_x': 0.33,'center_y': 0.56}
+    MDLabel:
+        text: "Signup"
+        font_size: "20sp"
+        font_name: "BPoppins"
+        halign: "center"
+        pos_hint: {'center_x': 0.14,'center_y': 0.52}
+    MDFloatLayout:
+        size_hint:  .79, .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.42}
+        MDLabel:
+            text: "Username"
+            font_size: "14sp"
+            font_name: "BPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.9}
+        TextInput:
+            size_hint_y: .70
+            font_name: "MPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            background_color: 0, 0, 0, 0
+            cursor_color: 0, 0, 0, 1
+            foreground_color: 120/255, 120/255, 120/255, 1
+            font_size: "17sp"
+            multiline: False
+        Image:
+            source: "aset/gambar/user1.png"
+            pos_hint: {'center_x': 0.95,'center_y': 0.5}
+            size_hint: 0.5, 0.5
+        MDFloatLayout:
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            size_hint_y: .03
+            md_bg_color: 120/255, 120/255, 120/255, 1
+    MDFloatLayout:
+        size_hint:  .79, .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.33}
+        MDLabel:
+            text: "Password"
+            font_size: "14sp"
+            font_name: "BPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.9}
+        TextInput:
+            size_hint_y: .70
+            font_name: "MPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            background_color: 0, 0, 0, 0
+            cursor_color: 0, 0, 0, 1
+            font_size: "17sp"
+            multiline: False
+            password: True
+        Image:
+            source: "aset/gambar/kunci.png"
+            pos_hint: {'center_x': 0.95,'center_y': 0.5}
+            size_hint: 0.5, 0.5
+        MDFloatLayout:
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            size_hint_y: .03
+            md_bg_color: 120/255, 120/255, 120/255, 1
+    MDRoundFlatButton:
+        text: "SIGNUP"
+        font_name: "BPoppins"
+        size_hint:  .6,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.23}
+        on_release:
+            root.manager.transition.direction = "up"
+            root.manager.current = "panjangsapi"

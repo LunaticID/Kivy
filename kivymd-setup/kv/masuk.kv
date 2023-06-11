@@ -1,0 +1,34 @@
+<Masuk>:
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {'center_x': 0.05,'center_y': 0.95}
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "welcome"
+    
+    MDFillRoundFlatButton:
+        text: "PANJANG SAPI"
+        font_name: "BPoppins"
+        size_hint:  .5,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.50}
+        on_release:
+            root.manager.transition.direction = "up"
+            root.manager.current = "panjangsapi"
+    MDFillRoundFlatButton:
+        text: "LINGKAR DADA SAPI"
+        font_name: "BPoppins"
+        size_hint:  .5,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.43}
+        on_release:
+            root.manager.transition.direction = "up"
+            root.manager.current = "lingkardada"
+    MDFillRoundFlatButton:
+        text: "HITUNG BOBOT SAPI"
+        font_name: "BPoppins"
+        size_hint:  .5,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.36}
+        on_release:
+            root.manager.transition.direction = "up"
+            root.manager.current = "rumus"

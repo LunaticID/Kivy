@@ -1,0 +1,42 @@
+<Welcome>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDBoxLayout:
+            size_hint_y: .3
+            Image:
+                source: "aset/gambar/sapi.png"
+                halign: "center"
+                pos_hint: {'center_y': 0.3}
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: .07
+            MDRelativeLayout:
+                adaptive_height: True
+                MDLabel:
+                    text: "T a K s i r  B o B o T"
+                    font_size: "25sp"
+                    font_name: "BPoppins"
+                    halign: "center"
+                    pos_hint: {'center_y': 0.5}
+                MDLabel:
+                    text: "Di tujukan untuk memenuhi tugas akhir"
+                    font_size: "18sp"
+                    font_name: "MPoppins"
+                    color: rgba(127, 127, 127, 255)
+                    halign: "center"
+                    pos_hint: {'center_y': 0.2}
+        MDBoxLayout:
+            size_hint_y: .2
+            orientation: 'vertical'
+            MDBoxLayout:
+                size_hint_y: .05
+    MDRoundFlatButton:
+        text: "MASUK"
+        font_name: "BPoppins"
+        size_hint:  .3, .0
+        halign: "center"
+        pos_hint: {'center_x': 0.5,'center_y': 0.3}
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current = "masuk"
+                

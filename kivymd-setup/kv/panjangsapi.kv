@@ -1,0 +1,84 @@
+<Panjangsapi>:
+    MDBoxLayout:
+        md_bg_color: 1, 1, 1, 0
+        orientation: 'vertical'
+        MDBoxLayout:
+            size_hint_y: .1
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint: {'center_y': 0.5}
+                on_release:
+                    root.manager.transition.direction = "right"
+                    root.manager.current = "masuk"           
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: .0
+            MDIconButton:
+                icon: "arrow-right"
+                pos_hint: {'center_y': 0.5}
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "lingkardada"
+                
+        MDBoxLayout:
+            size_hint_y: .1
+            MDLabel:
+                text: "Pengukuran Panjang Sapi"
+                font_size: "18sp"
+                font_name: "BPoppins"
+                halign: "center"
+                pos_hint: {'center_y': 0.8}
+        MDBoxLayout:
+            size_hint_y: .3
+            orientation: 'vertical'
+            MDRelativeLayout:
+                adaptive_height: True
+                Image:
+                    halign: "center"
+                    id: img1
+                    size_hint: 0.8, 1.5
+                    pos_hint: {'center_x': 0.5,'center_y': 0.9}
+        MDBoxLayout:
+            size_hint_y: .3
+            orientation: 'vertical'
+            MDRelativeLayout:
+                adaptive_height: True
+                Image:
+                    id: img2
+                    halign: "center"
+                    size_hint: 0.8, 1.5
+                    pos_hint: {'center_x': 0.5,'center_y': 0.9}
+        MDBoxLayout:
+            size_hint_y: .1
+            MDLabel:
+                id: length_label
+                font_name: "BPoppins"
+                halign: "center"
+                text: ''
+                pos_hint: {'center_y': 0.9}
+        MDBoxLayout:
+            size_hint_y: .2
+            orientation: 'vertical'
+    MDFillRoundFlatButton:
+        text: "Cari Gambar"
+        font_name: "BPoppins"
+        halign: "center"
+        size_hint:  .4,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.19}
+        on_release: 
+            root.file_chooser(root.img1)
+    MDFillRoundFlatButton:
+        text: "Proses Gambar"
+        font_name: "BPoppins"
+        size_hint:  .4,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.12}
+        on_press: root.proses_gambar()
+    MDFillRoundFlatButton:
+        id: clear
+        text: "Hapus Gambar"
+        font_name: "BPoppins"
+        size_hint:  .4,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.05}
+        on_press: root.clear()
+    
+       

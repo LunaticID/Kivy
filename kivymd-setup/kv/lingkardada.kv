@@ -1,0 +1,65 @@
+<Lingkardada>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDBoxLayout:
+            size_hint_y: .1
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint: {'center_y': 0.5}
+                on_release:
+                    root.manager.transition.direction = "right"
+                    root.manager.current = "panjangsapi"   
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: .0
+            MDIconButton:
+                icon: "arrow-right"
+                pos_hint: {'center_y': 0.5}
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "rumus"
+        MDBoxLayout:
+            size_hint_y: .1
+            MDLabel:
+                text: "Pengukuran Lingkar Dada Sapi"
+                font_size: "18sp"
+                font_name: "BPoppins"
+                halign: "center"
+                pos_hint: {'center_y': 0.8}
+        MDBoxLayout:
+            size_hint_y: .6
+            orientation: 'vertical'
+            Image:
+                id: img1
+                size: self.parent.width, self.parent.height*0.8
+                size_hint: 0.9, 0.6
+                pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        MDBoxLayout:
+            size_hint_y: .1
+            MDLabel:
+                id: circumference_label
+                font_name: "BPoppins"
+                halign: "center"
+                text: ""
+                pos_hint: {'center_y': 0.7}
+        MDBoxLayout:
+            size_hint_y: .25
+
+    MDFillRoundFlatButton:
+        text: "Cari Gambar"
+        size_hint:  .4,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.19}
+        on_release:
+            root.file_chooser(root.img1)
+    MDFillRoundFlatButton:
+        text: "Hitung Keliling "
+        size_hint:  .4,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.12}
+        on_release:
+            root.calculate_circumference()
+    MDFillRoundFlatButton:
+        id: clear
+        text: "Hapus Gambar"
+        size_hint:  .4,  .05
+        pos_hint: {'center_x': 0.5,'center_y': 0.05}
+        on_press: root.clear()

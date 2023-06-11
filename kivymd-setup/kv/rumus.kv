@@ -1,0 +1,95 @@
+<Rumus>:
+    MDBoxLayout:
+        md_bg_color: 1, 1, 1, 0
+        orientation: 'vertical'
+        MDBoxLayout:
+            size_hint_y: .1
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint: {'center_y': 0.7}
+                on_release:
+                    root.manager.transition.direction = "right"
+                    root.manager.current = "lingkardada"
+        MDBoxLayout:
+            size_hint_y: .2
+            orientation: 'vertical'
+            MDRelativeLayout:
+                adaptive_height: True
+                MDLabel:
+                    id: circumference_label
+                    font_size: "15sp"
+                    font_name: "BPoppins"
+                    halign: "center"
+                    pos_hint: {'center_y': 1.9}
+                MDLabel:
+                    id: length_label
+                    font_size: "15sp"
+                    font_name: "BPoppins"
+                    halign: "center"
+                    pos_hint: {'center_y': 1.6}
+        MDBoxLayout:
+            size_hint_y: .3  
+
+    MDRaisedButton:
+        text: "Hitung"
+        pos_hint: {'center_x': 0.5,'center_y': 0.1}
+        on_press: root.hitung_bobot_sapi()
+    MDRaisedButton:
+        text: "Keluar"
+        pos_hint: {'center_x': 0.87,'center_y': 0.95}
+        on_release: app.stop()
+
+
+    MDFloatLayout:
+        size_hint:  .79, .07
+        pos_hint: {'center_x': 0.5,'center_y': 0.55}
+
+        MDLabel:
+            text: "Masukkan Lingkar Dada Sapi (cm)"
+            font_size: "15sp"
+            font_name: "BPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.9} 
+        TextInput:
+            id: lingkar_dada_input
+            size_hint_y: .70
+            font_name: "MPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            background_color: 0, 0, 0, 0
+            cursor_color: 0, 0, 0, 1
+            font_size: "17sp"
+            multiline: False
+            on_text: root.set_lingkar_dada(self.text)
+        MDFloatLayout:
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            size_hint_y: .03
+            md_bg_color: 120/255, 120/255, 120/255, 1
+
+    MDFloatLayout:
+        size_hint:  .79, .07
+        pos_hint: {'center_x': 0.5,'center_y': 0.45} 
+        MDLabel:
+            text: "Masukkan Panjang Badan Sapi (cm)"
+            font_size: "15sp"
+            font_name: "BPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.9}
+        TextInput:
+            id: panjang_badan_input
+            size_hint_y: .70
+            font_name: "MPoppins"
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            background_color: 0, 0, 0, 0
+            cursor_color: 0, 0, 0, 1
+            font_size: "17sp"
+            multiline: False
+            on_text: root.set_panjang_badan(self.text)
+        MDFloatLayout:
+            pos_hint: {'center_x': 0.5,'center_y': 0.0}
+            size_hint_y: .03
+            md_bg_color: 120/255, 120/255, 120/255, 1
+    Label:
+        id: bobot_sapi
+        text: ""
+        font_name: "BPoppins"
+        pos_hint: {'center_x': 0.5,'center_y': 0.30}
+        font_size: "17sp"
+        color:'black'
